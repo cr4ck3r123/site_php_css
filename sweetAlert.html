@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" src="sweetalert.css"/>
+        <script src="sweetalert.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <button id="btnClick" style="margin: 40px;" class="btn btn-primary">Click</button><br><br>
+        <button id="btnClick2" style="margin: 40px;" class="btn btn-primary">Click2</button>
+
+    </body>
+    <script>
+        $(document).ready(function () {
+            $("#btnClick").on('click', function () {
+               swal("Hello OWT");
+             /*   Swal.fire(
+                        'Good job!',
+                        'You clicked the button!',
+                        'success'
+                        );*/
+
+               
+            });
+        });
+
+    </script>
+</html>
