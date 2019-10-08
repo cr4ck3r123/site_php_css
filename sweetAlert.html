@@ -14,27 +14,50 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
-        <link rel="stylesheet" src="sweetalert.css"/>
-        <script src="sweetalert.js"></script>
+        <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
     </head>
     <body>
         <div>TODO write content</div>
 
-        <button id="btnClick" style="margin: 40px;" class="btn btn-primary">Click</button><br><br>
-        <button id="btnClick2" style="margin: 40px;" class="btn btn-primary">Click2</button>
+        <button id="btnClick" style="margin: 40px;" class="btn btn-primary">Click - 1</button><br>
+        <button id="btnClick2" style="margin: 40px;" class="btn btn-warning">Click - 2</button><br>
+        <button id="btnClick3" style="margin: 40px;" class="btn btn-sucess">Click - 3</button>
+
 
     </body>
     <script>
+        //  <!-- botão 1 -->
         $(document).ready(function () {
             $("#btnClick").on('click', function () {
-               swal("Hello OWT");
-             /*   Swal.fire(
-                        'Good job!',
-                        'You clicked the button!',
-                        'success'
-                        );*/
+                swal("Hello OWT");
+            });
+        });
 
-               
+        //  <!-- botão 2 -->
+        $(document).ready(function () {
+            $("#btnClick2").on('click', function () {
+                //   swal("Hello OWT");
+                swal({
+                    position: 'top-center',
+                    type: 'success',
+                    title: 'Seu cadastro foi salvo',
+                    showConfirmButton: false,
+                    timer: 1500});
+            });
+        });
+
+//  <!-- botão 3 -->
+        $(document).ready(function () {
+            $("#btnClick3").on('click', function () {
+                //   swal("Hello OWT");
+                swal({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Algo deu errado!',
+                    footer: '<a href>Porque tenho esse problema?</a>'
+                });
             });
         });
 

@@ -21,24 +21,20 @@
 
         <div id="form_cadastro">
             <br>
-            <h1 class="titulos" style="margin-left: 10%">Cadastre-se</h1> 
-           <form action="cadastrar.php" method="POST" enctype="multipart/form-data"> 
+            <h1 class="titulos" style="margin-left: 10%">Tela de Login</h1> 
+           <form action="logar.php" method="POST" enctype="multipart/form-data"> 
          
-                <input type="text" name="nome" class="campos" placeholder="Nome">
-                <input type="email" name="email" class="campos" placeholder="Email">
+                <input type="email" name="email" class="campos" placeholder="Nome">
                 <input type="password" name="senha" class="campos" placeholder="Senha">
-                <input type="password" name="repetesenha" class="campos" placeholder="Confirmar Senha">
-                <input type="text"  name="lembrete" class="campos" placeholder="Lembrete">
-                <input type="file" name="foto" class="campos">
                 <div id="botoes">
-                    <input type="submit" value="Cadastrar" id="btnClick" class="bt_cad">
+                    <input type="submit" value="Logar" id="btnClick" class="bt_cad">
                     <input type="reset" value="Limpar" class="bt_cad">
                 </div>   
             </form>
             <div class="botoes">
                 <a href="index.php" class="form_link">&lAarr; Voltar para a pagina principal</a>
-                <p class="p_form">Ja possui cadastro? Entao clique no link para fazer o login</p>
-                <a href="login.php" class="form_link">Logar</a>
+                <p class="p_form">Ainda não possui cadastro? Entao clique no link abaixo para fazer o login</p>
+                <a href="form_cadastro.php" class="form_link">Cadastre-se</a>
             </div> 
             <div class="mostrar"></div>
         </div> 
