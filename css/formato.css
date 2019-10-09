@@ -45,7 +45,6 @@ body{
 
 .links_topo:hover{background-color:#59F}
 
-
 /*----------------------------Fim do topo--------------------*/
 
 
@@ -140,6 +139,12 @@ body{
 /*----------------------------Fim do Conteudo---------------------*/
 
 /*----------------------------Pagina de contato -------------------*/
+
+#box_log{
+     background-color: #FFF;
+}
+
+
 
  #form_cadastro{
         width: 80%;

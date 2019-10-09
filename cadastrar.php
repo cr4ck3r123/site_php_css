@@ -64,9 +64,9 @@ if ($nome == null || $email == null || $senha == null || $lembrete == null || $f
     
     
 // se a variavel registro é true então faça o processo de inserção
-if ($registro == true && $email_user != $email) {
+if ($registro == true && @$email_user != $email) {
       
-    $id = $id + 1; // Sempre vai ter um id acima do ultimo
+    @$id = $id + 1; //Sempre vai ter um id acima do ultimo
     $pasta = "user" . $id;  //cria a pasta
 
     if (file_exists("user/" . $pasta)) {
@@ -101,7 +101,7 @@ if ($registro == true && $email_user != $email) {
 
     //cadastrando um novo usuario e direcionando ele para tela principal
     mysqli_query($link, "insert into tb_user(nome, email, senha, lembrete, foto, nivel, dt, hr) values "
-            . "('$nome', '$email', '$senha', '$lembrete', '$foto', 5, '$dt', '$hr')");
+            . "('$nome', '$email', '$senha', '$lembrete', '$foto', 1, '$dt', '$hr')");
 
     echo "<p style='text-align:center;color:#333; padding:5px;'>Usuario Cadastrado com sucesso! <br>";
     echo "<a href='index.php' style='color:#59f'>Ir para Home</a> | <a href='login.php' style='color:#59f'>Login</a>";
