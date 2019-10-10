@@ -159,9 +159,9 @@ body{
      min-height: 30px;
      width:80%;
      margin: 10px 10%;
-     height: 30px;
+     height: 10px;
      float: left;
-     padding: 2px;
+     padding: -1px;
      font-size: 16px;     
  }
  
@@ -174,11 +174,11 @@ body{
  
 .campos{
     width: 80%;
-    margin: 10px 10%;
-    height: 25px;
+    margin: 5px 10%;
+    height: 40px;
     font-size: 16px;
     float: left;
-    padding: 2px;
+    padding: 5px;
     }
     
 .campos2{
@@ -222,6 +222,13 @@ body{
     .titulos{
         color:black;
         font-family: calibri, sans-serif;
+    }
+    
+    
+    .label{
+      margin: 0% 5%;
+      font-size: 15px;
+      float: left;   
     }
 /*----------------------------Fim de contato -------------------*/
 

@@ -11,7 +11,6 @@ while ($line = mysqli_fetch_array($sql)) {
     $foto = $line['foto'];
     $id = $line['id_user'];
 }
-
 if ($senha_log == $senha && $nivel == 1) {
     
 } else {
@@ -39,9 +38,9 @@ if ($senha_log == $senha && $nivel == 1) {
     <body>
         <div id="form_cadastro">
             <br>
-            <h1 class="titulos" style="margin-left: 10%"> Formulario de postagens   
+            <h1 class="titulos" style="margin-left: 10%"> Formulario de scripts css  
             </h1> 
-            <form action="postar.php" method="POST" enctype="multipart/form-data"> 
+            <form action="postar_script.php" method="POST" enctype="multipart/form-data"> 
                 <input type="text" name="titulo" class="campos" placeholder="Digite o titulo da postagem">
                 <input type="file" name="foto" class="campos" placeholder="Senha">
                 <textarea name="conteudo" class="campos" placeholder="Digite aqui o conteudo..." style="height:150px" maxlength="500"></textarea>
@@ -52,7 +51,7 @@ if ($senha_log == $senha && $nivel == 1) {
             </form>
             <div class="botoes">
                 <a href="admin.php" class="form_link">&Larr; Voltar para o painel</a>
-                <a href="form_scriptcss.php" class="form_link">&nbsp;&nbsp; |  &nbsp;&nbsp;Ir para form script css 	&Rarr;</a>
+                <a href="form_postar.php" class="form_link">&nbsp;&nbsp; |  &nbsp;&nbsp;Ir para form postar 	&Rarr;</a>
             </div> 
             <div class="mostrar"></div>
         </div> 

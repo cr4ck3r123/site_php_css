@@ -27,6 +27,18 @@
         <link href="css/formato.css" rel="stylesheet" type="text/css"/>
         <title> Painel Administrador </title>
 
+        <script type="text/javascript">
+        
+            function deslogar(){
+                    
+            $("#btnSair").on('click', function () {
+                swal("Hello OWT");
+            });
+        });      
+        
+        </script>
+        
+        
     </head>
     <body>
 
@@ -34,8 +46,8 @@
         <div id="form_cadastro">
 
             <h1 class="titulos" style="margin-left: 20%">Usuario logado como: <?php echo $login; ?></h1>
-            <a href="form_postagem.php" style="margin-left: 10%">Criar uma postagem</a> | <a href="form_scripts_css.php">Criar Scripts Css</a> |
-            <a href="index.php">Ir para Home</a> | <a href="logout.php">Sair</a>
+            <a href="form_postar.php" style="margin-left: 10%">Criar uma postagem</a> | <a href="form_scriptcss.php">Criar Scripts Css</a> |
+            <a href="index.php">Ir para Home</a> | <a href="logout.php" name="btnSair">Sair</a>
             
             <img src="<?php echo "user/user$id/$foto";?>"  style="float:left; width:60px; height:auto; margin: -20px -5px 0 0">
 

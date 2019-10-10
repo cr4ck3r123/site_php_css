@@ -29,20 +29,15 @@ $tipo = $_FILES['foto']['type'];
 $registro = false;
 
 //faz a validação do cadastro verificando se todos os campos estão preenchidos
-if ($nome == null || $email == null || $senha == null || $lembrete == null || $foto == null) {
-    
-    echo "<script>alert('É necessario preencher todos os campos!');window.history.go(-1);</script>"; 
-    
-} else {
+
      if ($senha != $resenha) {
         echo "<script>alert('Senhas não conferem!');window.history.go(-1);</script>";
       //  echo"Senhas não conferem";
     } else {
         // abilitando o usuario para o cadastro
-        $registro = true;
+         $registro = true;
     }
-  }
-
+  
   //fazendo uma consulta para pegar o ultimo id
    $sql = mysqli_query($link, "select * from tb_user order by id_user desc limit 1"); // busca o o ultimo id da tabela
     while ($line = mysqli_fetch_array($sql)) {

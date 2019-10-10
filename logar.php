@@ -3,6 +3,7 @@
 //Arquivo logar 
 
 include "connect.php";
+include './login.php';
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
@@ -21,15 +22,19 @@ if ($email != "" && $senha != "") {
             SESSION_START();
             $_SESSION['login'] = $email;
             $_SESSION['password'] = $senha;
-            
+
             if ($nivel == 1) {
                 header('location:admin.php');
-            }else{
+            } else {
                 header('location:cliente.php');
             }
         } else {
-            echo "Senha não confere como o que tem no cadastro";
-            echo "<a href='login.php'>Voltar a tela de login</a>";
+            echo "<script type=text/javascript> swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'E-mail ou Senha incorretos!',                       
+                    }); </script>";
+           // echo "<a href='login.php'>Voltar a tela de login</a>";
         }
     } else {
         echo 'Voce nao possui cadastro, Deseja se cadastrar';
