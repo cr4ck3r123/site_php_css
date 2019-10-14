@@ -2,8 +2,9 @@
 
 //incluindo arquivo de conexao
 include './connect.php';
+include './form_cadastro.php';
+header("Content-Type: text/html; charset=iso-8859-1", true); 
 date_default_timezone_set('America/Sao_paulo');
-
 
 
 // variaveis de cadastro para o formulario
@@ -15,28 +16,25 @@ $lembrete = $_POST['lembrete'];
 $foto = $_FILES['foto']['name'];
 $tipo = $_FILES['foto']['type'];
 
-/*
-  echo $nome . "<br>";
-  echo $email . "<br>";
-  echo $senha . "<br>";
-  echo $resenha . "<br>";
-  echo $lembrete . "<br>";
-  echo $foto . "<br>";
-  echo $tipo . "<br>";
- */
 
 //variavel registro para ver se o usuario esta ou não habilitado a fazer o cadastro
-$registro = false;
 
 //faz a validação do cadastro verificando se todos os campos estão preenchidos
 
      if ($senha != $resenha) {
-        echo "<script>alert('Senhas não conferem!');window.history.go(-1);</script>";
+        echo "<script type=text/javascript>
+            swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Senhas não são iguais!',                       
+                    }); 
+          </script>";
+        $registro = false;
       //  echo"Senhas não conferem";
     } else {
         // abilitando o usuario para o cadastro
          $registro = true;
-    }
+    
   
   //fazendo uma consulta para pegar o ultimo id
    $sql = mysqli_query($link, "select * from tb_user order by id_user desc limit 1"); // busca o o ultimo id da tabela
@@ -80,15 +78,18 @@ if ($registro == true && @$email_user != $email) {
             move_uploaded_file($_FILES['foto']['tmp_name'], "user/" . $pasta . "/" . $foto);
             // echo "Voce pode publicar esta imagem";
         } else {
-            echo "<script>"
-            . "alert('Esse arquivo não é suportado!');"
-            . "window.history.go(-1)"
-            . "</script>";
+            echo "<script type=text/javascript> 
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Este arquivo nao e suportado!',                       
+                    }); 
+                    </script>";   
+           
         } 
        
         // echo "<script>alert('A pasta " . $pasta . " foi criada com sucesso')</script>";
     }
-
   
     //Pegando a data e a hora do computador
     $dt = date('Y-m-d');
@@ -98,24 +99,39 @@ if ($registro == true && @$email_user != $email) {
     mysqli_query($link, "insert into tb_user(nome, email, senha, lembrete, foto, nivel, dt, hr) values "
             . "('$nome', '$email', '$senha', '$lembrete', '$foto', 1, '$dt', '$hr')");
 
-    echo "<p style='text-align:center;color:#333; padding:5px;'>Usuario Cadastrado com sucesso! <br>";
+    echo " <script type=text/javascript>
+        swal({
+                        type: 'success',
+                        title: 'Ok...',
+                        text: 'Usuario cadastrado com sucesso!',
+                        
+                    });
+            </script>";
+
+  
+    /*
     echo "<a href='index.php' style='color:#59f'>Ir para Home</a> | <a href='login.php' style='color:#59f'>Login</a>";
     echo "</p>";
-    
-   
-    
-  /*  echo "<script>"
-    . "alert('Usuario cadastrado com sucesso!');"
-    . "window.location.href='index.php';"
-    . "</script>"; */
-    
+    */
     
 } else {
-      echo "<script>"
+    
+   echo "<script type=text/javascript>
+
+            swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: 'Este email ja se encontra cadastrado!',                       
+                    }); 
+          </script>";
+   
+  // echo "<script> window.location.href='form_cadastro.php' </script>";
+    /*  echo "<script>"
             . "alert('Esse email já esta cadastrado!');"
             . "window.location.href='index.php';"
-            . "</script>"; 
+            . "</script>"; */
 }
+    }
     /*
       //substituindo caracteres indesejados
       $foto = str_replace(" ","_",$foto);

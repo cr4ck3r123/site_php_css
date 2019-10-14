@@ -1,29 +1,9 @@
-<?php
-include "connect.php";
-session_start();
-$login = $_SESSION['login']; // email do usuario
-$senha_log = $_SESSION['password']; //password do usuario
-$sql = mysqli_query($link, "select * from tb_user where email = '$login'");
-
-while ($line = mysqli_fetch_array($sql)) {
-    $senha = $line['senha'];
-    $nivel = $line['nivel'];
-    $foto = $line['foto'];
-    $id = $line['id_user'];
-}
-
-if ($senha_log == $senha && $nivel == 1) {
-    
-} else {
-    header('location:index.php');
-}
-?>
 <html>
     <head>	
 
         <?php header("Content-Type: text/html; charset=iso-8859-1", true) ?>	
 
-        <title> Site em php</title>
+        <title> Editar Cadastro </title>
         <!-- lib scripts -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
      
@@ -35,12 +15,14 @@ if ($senha_log == $senha && $nivel == 1) {
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
         <script type="text/javascript">
+
             function validar() {
-                var titulo = formPostar.titulo.value;
-                var conteudo = formPostar.conteudo.value;
-               
+                var email = formCliente.email.value;
+                var senha = formCliente.senha.value;
+                var repetesenha = formCliente.repetesenha.value;
+                var lembrete = formCliente.lembrete.value;
                 //  alert(email);
-                if (titulo == "" || conteudo == "") {
+                if (email == "" || senha == "" || repetesenha == "" || lembrete == "") {
                     swal({
                         type: 'error',
                         title: 'Oops...',
@@ -48,31 +30,39 @@ if ($senha_log == $senha && $nivel == 1) {
                     });
                     //   formlogin.nome.focus();
                     return false;
-                    
                 }
             }
-            </script>
+        </script>
 
     </head>
     <body>
+
+
         <div id="form_cadastro">
             <br>
-            <h1 class="titulos" style="margin-left: 10%"> Formulario de postagens   
-            </h1> 
-            <form name="formPostar" action="postar.php" method="POST" enctype="multipart/form-data"> 
-                <input type="text" name="titulo" class="campos" placeholder="Digite o titulo da postagem">
-                <input type="file" name="foto" class="campos" placeholder="Senha">
-                <textarea name="conteudo" class="campos" placeholder="Digite aqui o conteudo..." style="height:150px" maxlength="500"></textarea>
+            <h1 class="titulos" style="margin-left: 10%">Editar Cadastro</h1> 
+           <form name="formCliente" action="edit_cadastro.php" method="POST" enctype="multipart/form-data"> 
+         
+                <input type="text" name="nome" class="campos" placeholder="Nome">
+                <input type="email" name="email" class="campos" placeholder="Email">
+                
+                <input type="password" name="senha" class="campos" placeholder="Senha">
+                <input type="password" name="repetesenha" class="campos" placeholder="Confirmar Senha">
+                <input type="text"  name="lembrete" class="campos" placeholder="Lembrete">
+                <input type="file" name="foto" class="campos">
                 <div id="botoes">
-                    <input type="submit" value="Publicar" onclick="return validar()" id="btnClick" class="bt_cad">
+                    <input type="submit" value="Cadastrar" onclick="return validar()" id="btnClick" class="bt_cad">
                     <input type="reset" value="Limpar" class="bt_cad">
                 </div>   
             </form>
             <div class="botoes">
-                <a href="admin.php" class="form_link">&Larr; Voltar para o painel</a>
-                <a href="form_scriptcss.php" class="form_link">&nbsp;&nbsp; |  &nbsp;&nbsp;Ir para form script css 	&Rarr;</a>
+                <a href="index.php" class="form_link">&lAarr; Voltar para a pagina principal</a>
+             
             </div> 
             <div class="mostrar"></div>
         </div> 
+
+       
     </body>
+
 </html>

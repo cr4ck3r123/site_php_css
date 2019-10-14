@@ -11,7 +11,7 @@
 		
         <div id="geral"> <!--come�o -->
 		<div id="topo">
-			<?php include "topo.php"; ?>			
+			<?php include "topo.php"; ?>	                    
 		</div>
 
 		<div id="menu">

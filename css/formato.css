@@ -109,10 +109,10 @@ body{
     margin: 10px 2%;
 }
 .imagem{
-    width: 100%;
+    width: 60%;
     float:left;
     margin: 15px 0;
-    height: auto;
+    height: 65%;
 
 }
 .paragrafo,.data{
