@@ -21,25 +21,18 @@ if ($email != "" && $senha != "") {
         if ($senha_user == $senha) {
             SESSION_START();
             $_SESSION['login'] = $email;
-            $_SESSION['password'] = $senha;
-                        
-            
+            $_SESSION['password'] = $senha;          
             
             if ($nivel == 1) {
-              
-                echo "<script type=text/javascript> 
-                    swal({
-                        type: 'error',
-                        title: 'Oops...',
-                        text: 'E-mail ou Senha incorretos!',                       
-                    }); 
-                    </script>";               
+            
+                            
                header('location:admin.php');
                                
             } else {
                 header('location:cliente.php');
             }
         } else {
+                              
             echo "<script type=text/javascript> 
                     swal({
                         type: 'error',

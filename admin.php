@@ -52,9 +52,6 @@ if ($senha_log == $senha && $nivel == 1) {
         </div>
 
 
-
-
-
     </body>
 
 </html>

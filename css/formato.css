@@ -112,16 +112,18 @@ body{
     width: 60%;
     float:left;
     margin: 15px 0;
-    height: 65%;
+    height: auto;
 
 }
 .paragrafo,.data{
     font-size: 16px;
     color: #111;
-    float: left;
+    text-decoration:none;
     width: 96%;
     font-family: calibri, sans-serif;
     margin: 10px 2%;
+    text-align:justify;
+    float: left;
 
 }
 

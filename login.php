@@ -12,8 +12,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
         <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
-        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-
+       
 
         <script type="text/javascript">
 

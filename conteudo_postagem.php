@@ -8,15 +8,6 @@
             <p class="paragrafo">Paragrafo provisorio...</p>
             <span class="data">04/10/2019</span>
         </div>
-
-  
-
-    <div class="postagens">
-        <h1 class="titulo">Titulo da postagem</h1>
-        <img src="img/postagem.png" class="imagem">
-        <p class="paragrafo">Paragrafo provisorio...</p>
-        <span class="data">04/10/2019</span>
-    </div>
 </div>
 
 <div id="recentes">
